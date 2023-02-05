@@ -5,7 +5,7 @@ import math
 circle_radius = 5
 
 circle_area = math.pi * math.pow(circle_radius, 2)
-print("Circle_area:", circle_area)
+print("Circle area:", circle_area)
 
 circumference = 2 * math.pi * circle_radius
 print("Circumference:", circumference)
@@ -15,13 +15,12 @@ print("Circumference:", circumference)
 circle_area = 16
 
 circle_radius = math.sqrt(circle_area / math.pi)
-print("Circle_radius:", circle_radius)
+print("Circle radius:", circle_radius)
 
 # площадь сектора с заданными радиусом и углом в градусах
 
 circumference = 10
-corner = 120
+circle_angle = 120
 
-sector_area = math.pi/360 * math.pow(circumference, 2) * corner
-print("Sector_area:", sector_area)
-
+sector_area = math.pi / 360 * math.pow(circumference, 2) * circle_angle
+print("Sector area:", sector_area)
