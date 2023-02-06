@@ -19,8 +19,8 @@ print("Circle radius:", circle_radius)
 
 # площадь сектора с заданными радиусом и углом в градусах
 
-circumference = 10
+circle_radius = 10
 circle_angle = 180
 
-sector_area = math.pi / 360 * math.pow(circumference, 2) * circle_angle
+sector_area = math.pi / 360 * math.pow(circle_radius, 2) * circle_angle
 print("Sector area:", sector_area)
