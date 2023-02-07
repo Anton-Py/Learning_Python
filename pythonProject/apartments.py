@@ -5,7 +5,6 @@ number_of_apartments_on_floor = 4
 
 if (number_of_floors_in_house * number_of_entrances_in_house * number_of_apartments_on_floor) < apartments_number:
     print("Квартиры с таким номером нет в доме")
-
 else:
     if apartments_number % 4 > 0:
         floors_without_dividing_into_entrances = apartments_number // 4 + 1
