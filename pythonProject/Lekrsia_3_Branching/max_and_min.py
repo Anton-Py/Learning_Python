@@ -1,13 +1,13 @@
-num_one = int(input("Введите первое число: "))
-num_two = int(input("Введите второе число: "))
+num_1 = int(input("Введите первое число: "))
+num_2 = int(input("Введите второе число: "))
 
 # !
-if num_one > num_two:
-    print(f"Наибольшее число {num_one}, наименьшее число {num_two}")
+if num_1 > num_2:
+    print(f"Наибольшее число {num_1}, наименьшее число {num_2}")
 else:
-    print(f"Наибольшее число {num_two}, наименьшее число {num_one}")
+    print(f"Наибольшее число {num_2}, наименьшее число {num_1}")
 
 # 2
-maximum = num_one if num_one > num_two else num_two
-minimum = num_one if num_one < num_two else num_two
+maximum = num_1 if num_1 > num_2 else num_2
+minimum = num_1 if num_1 < num_2 else num_2
 print(f"Наибольшее число {maximum}, наименьшее число {minimum}")
