@@ -1,37 +1,38 @@
-floor_number = 6
-entrance_number = 5
-apartments_total_number = 81
-apartments_number_on_floor = 4
+# floors_quantity_in_house = int(input("Введите количество этажей: "))
+# entrances_quantity_in_house = int(input("Введите количество подъездов: "))
+# apartment_quantity = int(input("Введите квартиру: "))
+# apartments_quantity_on_floor = 4
 
-print("all: ", floor_number * entrance_number * apartments_number_on_floor)
-if (floor_number * entrance_number * apartments_number_on_floor) < apartments_total_number:
+floors_quantity_in_house = 6
+entrances_quantity_in_house = 5
+apartment_quantity = 81
+apartments_quantity_on_floor = 4
+
+if (floors_quantity_in_house * entrances_quantity_in_house * apartments_quantity_on_floor) < apartment_quantity:
     print("Квартиры с таким номером нет в доме")
-
 else:
-    if apartments_total_number % 4 > 0:
-        floor_all = apartments_total_number // 4 + 1
-        print("floor_all_1", floor_all)
+    if apartment_quantity % 4 > 0:
+        floors_without_dividing_into_entrances = apartment_quantity // apartments_quantity_on_floor + 1
     else:
-        floor_all = apartments_total_number // 4
-        print("floor_all_2", floor_all)
+        floors_without_dividing_into_entrances = apartment_quantity // apartments_quantity_on_floor
 
-    if floor_all % floor_number % 4 > 0:
-        entrance = floor_all // floor_number + 1
-        print("entrance_1", entrance)
+    if floors_without_dividing_into_entrances % floors_quantity_in_house % apartments_quantity_on_floor > 0:
+        entrance_number = floors_without_dividing_into_entrances // floors_quantity_in_house + 1
     else:
-        entrance = floor_all // floor_number
-        print("entrance_2", entrance)
+        entrance_number = floors_without_dividing_into_entrances // floors_quantity_in_house
 
-    entrance_floor = floor_all - floor_number * (entrance - 1)
-    print("entrance_floor", entrance_floor)
+    floor_in_entrance = floors_without_dividing_into_entrances - floors_quantity_in_house * (entrance_number - 1)
 
-    position = apartments_total_number % apartments_number_on_floor
-    print("position", position)
-    if position == 1:
-        print("Ближняя слева, квартира")
-    elif position == 2:
-        print("Дальняя слева, квартира")
-    elif position == 3:
-        print("Дальняя справа, квартира")
+    apartment_location = apartment_quantity % apartments_quantity_on_floor
+    if apartment_location == 1:
+        print(f"Номер подъезда: {entrance_number}, номер этажа: {floor_in_entrance}, квартира ближняя слева")
+    elif apartment_location == 2:
+        print(f"Номер подъезда: {entrance_number}, номер этажа: {floor_in_entrance}, квартира дальняя слева")
+    elif apartment_location == 3:
+        print(f"Номер подъезда: {entrance_number}, номер этажа: {floor_in_entrance}, квартира дальняя справа")
     else:
-        print("Ближняя справа")
+        print(f"Номер подъезда: {entrance_number}, номер этажа: {floor_in_entrance}, квартира ближняя справа")
+
+    entrance_number = (apartment_quantity - 1) // (floors_quantity_in_house * 4) + 1
+    floor_in_entrance = (apartment_quantity - 1) % (floors_quantity_in_house * 4) // 4 + 1
+    print(entrance_number, floor_in_entrance)
