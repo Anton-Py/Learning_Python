@@ -1,17 +1,16 @@
 age = int(input("Введите свой возраст от 1 до 112 включительно: "))
 
-remainder_years_division = age % 10
+last_digit_age_1 = age % 10
+last_digit_age_2 = age % 100
 
 if age < 1:
     print("Вы слишком малы")
 elif age > 112:
     print("Вы слишком стары")
-
-if 11 <= age <= 14 or (age // 10 == (11 or 12 or 13)):
-    print("Вам {} лет".format(age))
-elif 2 <= remainder_years_division <= 4:
-    print("Вам {} года".format(age))
-elif remainder_years_division == 1:
-    print("Вам {} год".format(age))
 else:
-    print("Вам {} лет".format(age))
+    if last_digit_age_1 == 1 and last_digit_age_1 != 11:
+        print(f"Вам {age} год")
+    elif 2 <= last_digit_age_1 <= 4 and (last_digit_age_2 < 10 or last_digit_age_2 >= 20):
+        print(f"Вам {age} года")
+    else:
+        print(f"Вам {age} лет")
