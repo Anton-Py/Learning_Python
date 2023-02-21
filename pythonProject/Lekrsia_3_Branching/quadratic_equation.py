@@ -4,7 +4,7 @@ a = float(input("Введите коэффициент a: "))
 b = float(input("Введите коэффициент b: "))
 c = float(input("Введите коэффициент c: "))
 
-epsilon = 0.01
+epsilon = 0.0001
 
 if abs(a) >= epsilon:  # a != 0
 
