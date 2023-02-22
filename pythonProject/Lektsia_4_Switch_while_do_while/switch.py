@@ -4,12 +4,12 @@ command_code = int(input("Введите код команды: "))
 
 match command_code:
     case 1:
-        print(number_1 + number_2)
+        print(f"Сложение двух чисел: {number_1 + number_2}")
     case 2:
-        print(number_1 - number_2)
+        print(f"Вычитание двух чисел: {number_1 - number_2}")
     case 3:
-        print(number_1 * number_2)
+        print(f"Умножение двух чисел: {number_1 * number_2}")
     case 4:
-        print(number_1 / number_2)
+        print(f"Деление двух чисел: {number_1 / number_2}")
     case other:
         print("Неизвестная операция")
