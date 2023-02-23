@@ -1,12 +1,12 @@
 import math
 
-amount_numbers = int(input("Введите число: "))
-sum_row = 0
+numbers_amount = int(input("Введите число: "))
+row_sum = 0
 
-for f in range(1, amount_numbers + 1):
-    if f % 2 != 0:
-        sum_row += math.pow(f, 2)
+for i in range(1, numbers_amount + 1):
+    if i % 2 != 0:
+        row_sum += math.pow(i, 2)
     else:
-        sum_row -= math.pow(f, 2)
+        row_sum -= math.pow(i, 2)
 
-print("Сумма ряда: ", sum_row)
+print("Сумма ряда:", row_sum)
