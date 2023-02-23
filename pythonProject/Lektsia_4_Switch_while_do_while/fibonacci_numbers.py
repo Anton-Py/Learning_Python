@@ -12,4 +12,4 @@ for i in range(number_integer):
     count += 1
     if count == number_integer - 1:
         print()
-        print("Число Фибоначчи сномером n = ", sum_first_and_next_number)
+        print("Число Фибоначчи сномером n =", sum_first_and_next_number)
