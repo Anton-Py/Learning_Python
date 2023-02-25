@@ -6,5 +6,5 @@ while True:
     if user_string == fixed_string:
         print("Вы ввели верную строку")
         break
-    else:
-        print("Вы ввели не верную строку")
+
+    print("Вы ввели неверную строку")
