@@ -1,13 +1,14 @@
-primary_number = int(input("Введите начальное число: "))
-final_number = int(input("Введите конечное число: "))
-quantity_numbers_per_line = int(input("Введите количество чисел в строке: "))
+start_number = int(input("Введите начальное число: "))
+end_number = int(input("Введите конечное число: "))
+numbers_per_line_quantity = int(input("Введите количество чисел в строке: "))
 
-counter_to_count_in_line = 0
+current_numbers_per_line_quantity = 0
+length_end_number = len(str(end_number))
 
-for f in range(primary_number, final_number + 1):
-    counter_to_count_in_line += 1
-    print(f"{f: >{len(str(final_number))}}", end=" ")
+for i in range(start_number, end_number + 1):
+    current_numbers_per_line_quantity += 1
+    print(f"{i: >{length_end_number}}", end=" ")
 
-    if counter_to_count_in_line == quantity_numbers_per_line:
+    if current_numbers_per_line_quantity == numbers_per_line_quantity:
         print()
-        counter_to_count_in_line = 0
+        current_numbers_per_line_quantity = 0

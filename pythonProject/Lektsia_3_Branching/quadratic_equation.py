@@ -19,13 +19,11 @@ if abs(a) >= epsilon:  # a != 0
     else:
         x = -b / 2 * a
         print(f"Уравнение имеет один корень. Корень: {x:.4f}")
-else:
-    print("Уравнение линейное")
 
-if abs(b) >= epsilon:  # b != 0
+elif abs(b) >= epsilon:  # b != 0
     x = -c / b
     print(f"Решением уравнения является: {x:.4f}")
-elif abs(b) <= epsilon and abs(c) > epsilon:  # b == 0 c != 0
+elif abs(b) <= epsilon and abs(c) >= epsilon:  # b == 0 c != 0
     print("Уравнение корней не имеет")
 elif abs(b) <= epsilon and abs(c) <= epsilon:  # b == 0 c == 0
     print("Корнем уравнения является любое число")
