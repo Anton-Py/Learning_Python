@@ -1,13 +1,14 @@
-number_users = int(input("Введите целое число: "))
+user_number = int(input("Введите целое число: "))
 
 print("Все простые числа, которые содержит целое число:", end=" ")
 
-for number in range(2, number_users + 1):
-    simple = True
+for number in range(2, user_number + 1):
+    is_prime_number = True
 
-    for digit in range(2, number):
-        if number % digit == 0:
-            simple = False
+    for value in range(2, number):
+        if number % value == 0:
+            is_prime_number = False
+            break
 
-    if simple:
+    if is_prime_number:
         print(number, end=" ")
