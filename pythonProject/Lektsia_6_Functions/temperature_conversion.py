@@ -1,16 +1,16 @@
-temperature_celsius = int(input("Введите температуру в градусах цельсия: "))
+temperature_celsius = float(input("Введите температуру в градусах цельсия: "))
 
 
-def conversion_temperature_to_fahrenheit(temperature_in_celsius):
-    return 9 / 5 * temperature_in_celsius + 32
+def get_conversion_temperature_to_fahrenheit(temperature):
+    return 9 / 5 * temperature + 32
 
 
-def conversion_temperature_to_kelvin(temperature_in_celsius):
-    return temperature_in_celsius + 273.15
+def get_conversion_temperature_to_kelvin(temperature):
+    return temperature + 273.15
 
 
-temperature_in_fahrenheit = conversion_temperature_to_fahrenheit(temperature_celsius)
-temperature_in_kalvin = conversion_temperature_to_kelvin(temperature_celsius)
+temperature_in_fahrenheit = get_conversion_temperature_to_fahrenheit(temperature_celsius)
+temperature_in_kelvin = get_conversion_temperature_to_kelvin(temperature_celsius)
 
 print(f"Температура в градусах Фаренгейта равна: {temperature_in_fahrenheit}\n"
-      f"температура в градусах Кельвина равна: {temperature_in_kalvin}")
+      f"температура в градусах Кельвина равна: {temperature_in_kelvin}")

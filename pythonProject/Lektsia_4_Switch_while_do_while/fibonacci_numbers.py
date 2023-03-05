@@ -1,15 +1,15 @@
-fibonacci_number_series = int(input("Введите номер элемента ряда Фибоначчи: "))
+fibonacci_number_element = int(input("Введите номер элемента ряда Фибоначчи: "))
 
-number_1 = 0
-number_2 = 1
+fibonacci_first_number = 0
+fibonacci_second_number = 1
 
-count = 0
+i = 0
 
-while count < fibonacci_number_series - 1:
-    fibonacci_sum = number_1 + number_2
-    number_1 = number_2
-    number_2 = fibonacci_sum
+while i < fibonacci_number_element:
+    fibonacci_numbers_sum = fibonacci_first_number + fibonacci_second_number
+    fibonacci_number_1 = fibonacci_second_number
+    fibonacci_second_number = fibonacci_numbers_sum
 
-    count += 1
+    i += 1
 
-print(f"Число Фибоначчи с номером {fibonacci_number_series} =", number_1)
+print(f"Число Фибоначчи с номером {fibonacci_number_element} =", fibonacci_first_number)
