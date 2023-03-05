@@ -4,13 +4,13 @@ from multipledispatch import dispatch
 def get_type_name(data):
     if isinstance(data, str):
         print("Это строка")
-    if isinstance(data, int):
+    elif isinstance(data, int):
         print("Это целое число")
-    if isinstance(data, complex):
+    elif isinstance(data, complex):
         print("Это комплексное число")
-    if isinstance(data, float):
+    elif isinstance(data, float):
         print("Это число с плавающей точкой")
-    if isinstance(data, bool):
+    elif isinstance(data, bool):
         print("Это булево значение")
 
 
