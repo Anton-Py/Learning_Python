@@ -1,19 +1,26 @@
-def calculation_order_value(product_1, product_2, cash_sum):
-    product_quantity = product_1 + product_2
+SMALL_DISCOUNT = 0.05
+BIG_DISCOUNT = 0.10
+PRODUCTS_PRICE_FOR_DISCOUNT = 1000
+PRODUCTS_QUANTITY_FOR_DISCOUNT = 10
 
-    if product_quantity >= 10 and cash_sum >= 1000:
-        discount_amount = cash_sum - cash_sum * 0.10
-    elif product_quantity >= 10:
-        discount_amount = cash_sum - cash_sum * 0.05
-    elif cash_sum >= 1000:
-        discount_amount = cash_sum - cash_sum * 0.05
+
+def get_calculation_order_cost(product_quantity_1, product_quantity_2, product_price_1, product_price_2):
+    products_quantity = product_quantity_1 + product_quantity_2
+    cash_sum = product_price_1 + product_price_2
+
+    if products_quantity >= PRODUCTS_QUANTITY_FOR_DISCOUNT and cash_sum >= PRODUCTS_PRICE_FOR_DISCOUNT:
+        products_price_including_discount = cash_sum - cash_sum * BIG_DISCOUNT
+    elif products_quantity >= PRODUCTS_QUANTITY_FOR_DISCOUNT:
+        products_price_including_discount = cash_sum - cash_sum * SMALL_DISCOUNT
+    elif cash_sum >= PRODUCTS_PRICE_FOR_DISCOUNT:
+        products_price_including_discount = cash_sum - cash_sum * SMALL_DISCOUNT
     else:
-        discount_amount = cash_sum
+        products_price_including_discount = cash_sum
 
-    return discount_amount
+    return products_price_including_discount
 
 
-print("Стоимость заказа равна:", calculation_order_value(3, 5, 1100))
-print("Стоимость заказа равна:", calculation_order_value(4, 7, 1000))
-print("Стоимость заказа равна:", calculation_order_value(4, 6, 900))
-print("Стоимость заказа равна:", calculation_order_value(4, 2, 900))
+print("Стоимость заказа равна:", get_calculation_order_cost(3, 5, 500, 800))
+print("Стоимость заказа равна:", get_calculation_order_cost(4, 7, 600, 500))
+print("Стоимость заказа равна:", get_calculation_order_cost(4, 6, 300, 200))
+print("Стоимость заказа равна:", get_calculation_order_cost(4, 2, 300, 300))
