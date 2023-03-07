@@ -1,44 +1,38 @@
-start_number_range = float(input("Введите начальное число диапазлона: "))
-end_number_range = float(input("Введите конечное число диапазона: "))
-number_to_check = float(input("Введите число, для проверки принадлежгости диапазону: "))
-
-
 class Range:
-    def __init__(self, number_from, number_to, number_check):
-        self.__number_from = number_from
-        self.__number_to = number_to
-        self.__number_check = number_check
+    def __init__(self, start, end):
+        self.__start = start
+        self.__end = end
 
     @property
     def number_from(self):
-        return self.__number_from
+        return self.__start
+
+    @number_from.setter
+    def number_from(self, start):
+        self.__start = start
 
     @property
     def number_to(self):
-        return self.__number_to
-
-    @number_from.setter
-    def number_from(self, number_from):
-        self.__number_from = number_from
+        return self.__end
 
     @number_to.setter
-    def number_to(self, number_to):
-        self.__number_to = number_to
+    def number_to(self, end):
+        self.__end = end
 
-    def calculate_range_length(self):
-        print(self.__number_to - self.__number_from)
+    def get_calculate_length(self):
+        return self.__end - self.__start
 
-    def is_inside(self, ):
-        if self.__number_from <= self.__number_check <= self.__number_to:
-            return True
-        else:
-            return False
+    def is_inside(self, number_check):
+        return self.__start <= number_check <= self.__end
 
     def print(self):
-        print(self.__number_from, self.__number_to)
+        print(self.__start, self.__end)
 
 
-range_numbers = Range(start_number_range, end_number_range, number_to_check)
+number_start = float(input("Введите начальное число диапазона: "))
+number_end = float(input("Введите конечное число диапазона: "))
+number_to_check = float(input("Введите число, для проверки принадлежности диапазону: "))
 
-range_numbers.calculate_range_length()
-print(range_numbers.is_inside())
+numbers_range = Range(number_start, number_end)
+print(numbers_range.get_calculate_length())
+print(numbers_range.is_inside(number_to_check))
