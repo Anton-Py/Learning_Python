@@ -11,7 +11,7 @@ while True:
     if user_number == random_number:
         print(f"Вы отгадали число за {attempts_quantity} попыток")
         break
-    elif user_number > random_number:
+    if user_number > random_number:
         print("Загаданное число меньше")
     else:
         print("Загаданное число больше")
