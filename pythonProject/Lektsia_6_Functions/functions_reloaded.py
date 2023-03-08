@@ -12,13 +12,15 @@ def get_type_name(data):
         return "Это число с плавающей точкой"
     elif isinstance(data, bool):
         return "Это булево значение"
+    else:
+        return "Неучтенный тип"
 
 
-get_type_name("qwerty")
-get_type_name(1)
-get_type_name(3 + 4j)
-get_type_name(1.5)
-get_type_name(False)
+print(get_type_name("qwerty"))
+print(get_type_name(1))
+print(get_type_name(3 + 4j))
+print(get_type_name(1.5))
+print(get_type_name(False))
 
 
 @dispatch(int)
@@ -46,8 +48,8 @@ def get_type_name(data):
     return "Это булево значение"
 
 
-get_type_name("qwerty")
-get_type_name(1)
-get_type_name(3 + 4j)
-get_type_name(1.5)
-get_type_name(False)
+print(get_type_name("qwerty"))
+print(get_type_name(1))
+print(get_type_name(3 + 4j))
+print(get_type_name(1.5))
+print(get_type_name(False))
