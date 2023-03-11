@@ -4,22 +4,22 @@ class Range:
         self.__end = end
 
     @property
-    def number_from(self):
+    def start(self):
         return self.__start
 
-    @number_from.setter
-    def number_from(self, start):
+    @start.setter
+    def start(self, start):
         self.__start = start
 
     @property
-    def number_to(self):
+    def end(self):
         return self.__end
 
-    @number_to.setter
-    def number_to(self, end):
+    @end.setter
+    def end(self, end):
         self.__end = end
 
-    def get_calculate_length(self):
+    def get_length(self):
         return self.__end - self.__start
 
     def is_inside(self, number_check):
@@ -29,10 +29,10 @@ class Range:
         print(self.__start, self.__end)
 
 
-number_start = float(input("Введите начальное число диапазона: "))
-number_end = float(input("Введите конечное число диапазона: "))
+start_number = float(input("Введите начальное число диапазона: "))
+end_number = float(input("Введите конечное число диапазона: "))
 number_to_check = float(input("Введите число, для проверки принадлежности диапазону: "))
 
-numbers_range = Range(number_start, number_end)
-print(numbers_range.get_calculate_length())
+numbers_range = Range(start_number, end_number)
+print(numbers_range.get_length())
 print(numbers_range.is_inside(number_to_check))
