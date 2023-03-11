@@ -10,8 +10,7 @@ def verification_string_to_increasing(list_to_verification):
 
     if verification:
         return "Список отсортирован по возрастанию"
-    else:
-        return "Список отсортирован не по возрастанию"
+    return "Список отсортирован не по возрастанию"
 
 
 def verification_string_to_declining(list_to_verification):
@@ -26,8 +25,7 @@ def verification_string_to_declining(list_to_verification):
 
     if verification:
         return "Список отсортирован по убыванию"
-    else:
-        return "Список отсортирован не по убыванию"
+    return "Список отсортирован не по убыванию"
 
 
 entered_list_to_verification = input("Введите несколько чисел через пробел для создания списка: ").split()
