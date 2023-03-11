@@ -1,24 +1,24 @@
-def calculate_symbol(string):
-    count_sting = 0
-    count_digit = 0
-    count_spase = 0
-    count_other_symbol = 0
+def calculate_symbols(string):
+    characters_quantity = 0
+    digits_quantity = 0
+    spaces_quantity = 0
+    other_symbols_quantity = 0
 
-    for f in string:
-        if f.isalpha():
-            count_sting += 1
-        elif f.isdigit():
-            count_digit += 1
-        elif f.isspace():
-            count_spase += 1
+    for symbol in string:
+        if symbol.isalpha():
+            characters_quantity += 1
+        elif symbol.isdigit():
+            digits_quantity += 1
+        elif symbol.isspace():
+            spaces_quantity += 1
         else:
-            count_other_symbol += 1
+            other_symbols_quantity += 1
 
-    print(f"Количество букв в строке: {count_sting}\nКоличество цифр в строке {count_digit}\n"
-          f"Количество пробельных символов в строке {count_spase}\n"
-          f"Количество остальных символов {count_other_symbol}")
+    print(f"Количество букв в строке: {characters_quantity}\nКоличество цифр в строке {digits_quantity}\n"
+          f"Количество пробельных символов в строке {spaces_quantity}\n"
+          f"Количество остальных символов {other_symbols_quantity}")
 
 
-string_users = input("Введите строку: ")
+user_string = input("Введите строку: ")
 
-calculate_symbol(string_users)
+calculate_symbols(user_string)
