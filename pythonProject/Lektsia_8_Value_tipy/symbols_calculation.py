@@ -1,12 +1,12 @@
 def calculate_symbols(string):
-    characters_quantity = 0
+    letters_quantity = 0
     digits_quantity = 0
     spaces_quantity = 0
     other_symbols_quantity = 0
 
     for symbol in string:
         if symbol.isalpha():
-            characters_quantity += 1
+            letters_quantity += 1
         elif symbol.isdigit():
             digits_quantity += 1
         elif symbol.isspace():
@@ -14,7 +14,7 @@ def calculate_symbols(string):
         else:
             other_symbols_quantity += 1
 
-    print(f"Количество букв в строке: {characters_quantity}\nКоличество цифр в строке {digits_quantity}\n"
+    print(f"Количество букв в строке: {letters_quantity}\nКоличество цифр в строке {digits_quantity}\n"
           f"Количество пробельных символов в строке {spaces_quantity}\n"
           f"Количество остальных символов {other_symbols_quantity}")
 
