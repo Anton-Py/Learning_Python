@@ -1,24 +1,24 @@
-def search_maximal_substring(string):
-    string = string.lower()
-    max_substring = 1
-    current_substring = 1
+def get_maximal_length_substring(string):
+    if len(string) == 0:
+        return 0
 
-    if len(string) < 1:
-        return "Строка пустая, введите верные данные"
+    string = string.lower()
+    temp_substring = 1
+    temp_current_substring = 1
 
     for i in range(0, len(string) - 1):
         if string[i] == string[i + 1]:
-            current_substring += 1
+            temp_current_substring += 1
 
-            if current_substring > max_substring:
-                max_substring = current_substring
+            if temp_current_substring > temp_substring:
+                temp_substring = temp_current_substring
 
         else:
-            current_substring = 1
+            temp_current_substring = 1
 
-    return f"Максимальная длина подстроки равна: {max_substring}"
+    return temp_substring
 
 
 user_string = input("Введите строку: ")
 
-print(search_maximal_substring(user_string))
+print(get_maximal_length_substring(user_string))
