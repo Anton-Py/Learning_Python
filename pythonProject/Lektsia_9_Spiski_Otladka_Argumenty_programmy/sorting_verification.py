@@ -1,20 +1,16 @@
 def is_list_sorted_by_ascending(list_to_verification):
     for i in range(len(list_to_verification) - 1):
-        if list_to_verification[i] < list_to_verification[i + 1] \
-                or list_to_verification[i] == list_to_verification[i + 1]:
-            continue
-        else:
+        if list_to_verification[i] >= list_to_verification[i + 1]:
             return False
+
     return True
 
 
 def is_list_sorted_by_descending(list_to_verification):
     for i in range(len(list_to_verification) - 1):
-        if list_to_verification[i] > list_to_verification[i + 1] \
-                or list_to_verification[i] == list_to_verification[i + 1]:
-            continue
-        else:
+        if list_to_verification[i] <= list_to_verification[i + 1]:
             return False
+
     return True
 
 
