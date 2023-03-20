@@ -1,15 +1,18 @@
-def get_max_number(numbers_list):
-    max_number = numbers_list[0]
+def run_selection_sort(numbers_list):
+    for i in range(len(numbers_list)):
+        min_index = i
 
-    for number in numbers_list:
-        if number > max_number:
-            max_number = number
+        for j in range(i + 1, len(numbers_list)):
+            if numbers_list[min_index] > numbers_list[j]:
+                min_index = j
 
-    return max_number
+        tmp = numbers_list[i]
+        numbers_list[i] = numbers_list[min_index]
+        numbers_list[min_index] = tmp
+
+    return numbers_list
 
 
-random_numbers_list = [float(i) for i in input(
-    "Введите несколько вещественных чисел через пробел, для создания списка: ").split()]
+list_for_sort = [5, 9, 3, 4, 1, 6, 2, 8]
 
-print("Максимальное число в списке вещественных чисел:", get_max_number(random_numbers_list))
-print("Максимальное число в списке вещественных чисел:", max(random_numbers_list))
+print(run_selection_sort(list_for_sort))
