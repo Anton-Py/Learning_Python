@@ -1,23 +1,26 @@
 def is_palindrome(string):
-    count = 1
+    j = -1
+    i = 0
     string = string.lower()
 
-    while True:
-        for i in range(len(string)):
-            if not string[i].isalpha():
-                continue
+    while i < len(string):
+        if not string[i].isalpha():
+            i += 1
+            continue
 
-            if not string[-count].isalpha():
-                count += 1
+        if not string[j].isalpha():
+            j -= 1
+            continue
 
-            elif string[i] != string[-count]:
-                return False
+        elif string[i] != string[j]:
+            return False
 
-            count += 1
+        j -= 1
+        i += 1
 
-        return True
+    return True
 
 
-users_string = input("Введите строку: ")
+user_string = input("Введите строку: ")
 
-print(is_palindrome(users_string))
+print("Является ли строка палиндромом:", is_palindrome(user_string))
