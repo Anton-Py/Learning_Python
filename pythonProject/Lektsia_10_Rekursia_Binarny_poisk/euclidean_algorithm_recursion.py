@@ -1,8 +1,8 @@
 def get_greatest_common_divisor(number_1, number_2):
     if number_2 == 0:
         return number_1
-    else:
-        return get_greatest_common_divisor(number_2, number_1 % number_2)
+
+    return get_greatest_common_divisor(number_2, number_1 % number_2)
 
 
 user_number_1 = int(input("Введите первое число: "))
