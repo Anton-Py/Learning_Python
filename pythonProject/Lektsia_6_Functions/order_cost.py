@@ -1,6 +1,6 @@
-def get_order_cost(product_1_quantity, product_1_cost, product_2_quantity, product_2_cost):
+def get_order_cost(product_1_quantity, product_1_price, product_2_quantity, product_2_price):
     products_quantity = product_1_quantity + product_2_quantity
-    order_cost = product_1_cost * product_1_quantity + product_2_cost + product_2_quantity
+    order_cost = product_1_price * product_1_quantity + product_2_price + product_2_quantity
 
     small_discount = 0.05
     big_discount = 0.10
