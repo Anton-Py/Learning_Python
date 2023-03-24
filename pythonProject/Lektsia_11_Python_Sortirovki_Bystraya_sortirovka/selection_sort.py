@@ -1,18 +1,16 @@
-def run_selection_sort(numbers_list):
-    for i in range(len(numbers_list)):
+def selection_sort(list_for_sort):
+    for i in range(len(list_for_sort) - 1):
         min_index = i
 
-        for j in range(i + 1, len(numbers_list)):
-            if numbers_list[min_index] > numbers_list[j]:
+        for j in range(i + 1, len(list_for_sort)):
+            if list_for_sort[min_index] > list_for_sort[j]:
                 min_index = j
 
-        tmp = numbers_list[i]
-        numbers_list[i] = numbers_list[min_index]
-        numbers_list[min_index] = tmp
-
-    return numbers_list
+        temp = list_for_sort[i]
+        list_for_sort[i] = list_for_sort[min_index]
+        list_for_sort[min_index] = temp
 
 
-list_for_sort = [5, 9, 3, 4, 1, 6, 2, 8]
+user_list_for_sort = [5, 9, 3, 4, 1, 6, 2, 8]
 
-print(run_selection_sort(list_for_sort))
+selection_sort(user_list_for_sort)
