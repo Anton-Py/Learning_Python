@@ -14,3 +14,4 @@ def selection_sort(list_for_sort):
 user_list_for_sort = [5, 9, 3, 4, 1, 6, 2, 8]
 
 selection_sort(user_list_for_sort)
+print(user_list_for_sort)
