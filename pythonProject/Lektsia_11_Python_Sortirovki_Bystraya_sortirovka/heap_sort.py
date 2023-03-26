@@ -1,32 +1,64 @@
-def convert_to_binary_tree(nums, heap_size, root_index):
-    largest = root_index
-    left_child = (2 * root_index) + 1
-    right_child = (2 * root_index) + 2
+# Python3 program for implementation
+# of Iterative Heap Sort
 
-    if left_child < heap_size and nums[left_child] > nums[largest]:
-        largest = left_child
+# function build Max Heap where value
+# of each child is always smaller
+# than value of their parent
+def buildMaxHeap(arr, n):
+    for i in range(n):
 
-    if right_child < heap_size and nums[right_child] > nums[largest]:
-        largest = right_child
+        # if child is bigger than parent
+        if arr[i] > arr[int((i - 1) / 2)]:
+            j = i
 
-    if largest != root_index:
-        nums[root_index], nums[largest] = nums[largest], nums[root_index]
-        convert_to_binary_tree(nums, heap_size, largest)
-
-
-def heap_sort(numbers_list):
-    list_length = len(numbers_list)
-
-    for i in range(list_length, -1, -1):
-        convert_to_binary_tree(numbers_list, list_length, i)
-
-    for i in range(list_length - 1, 0, -1):
-        numbers_list[i], numbers_list[0] = numbers_list[0], numbers_list[i]
-        convert_to_binary_tree(numbers_list, i, 0)
-
-    return numbers_list
+            # swap child and parent until
+            # parent is smaller
+            while arr[j] > arr[int((j - 1) / 2)]:
+                (arr[j],
+                 arr[int((j - 1) / 2)]) = (arr[int((j - 1) / 2)],
+                                           arr[j])
+                j = int((j - 1) / 2)
 
 
-list_for_sort = [5, 9, 3, 4, 1, 6, 2, 8]
+def heapSort(arr, n):
+    buildMaxHeap(arr, n)
 
-print(heap_sort(list_for_sort))
+    for i in range(n - 1, 0, -1):
+
+        # swap value of first indexed
+        # with last indexed
+        arr[0], arr[i] = arr[i], arr[0]
+
+        # maintaining heap property
+        # after each swapping
+        j, index = 0, 0
+
+        while True:
+            index = 2 * j + 1
+
+            # if left child is smaller than
+            # right child point index variable
+            # to right child
+            if (index < (i - 1) and
+                    arr[index] < arr[index + 1]):
+                index += 1
+
+            # if parent is smaller than child
+            # then swapping parent with child
+            # having higher value
+            if index < i and arr[j] < arr[index]:
+                arr[j], arr[index] = arr[index], arr[j]
+
+            j = index
+            if index >= i:
+                break
+
+
+arr = [10, 20, 15, 17, 9, 21]
+n = len(arr)
+
+heapSort(arr, n)
+
+print("Sorted array: ")
+for i in range(n):
+    print(arr[i], end=" ")
