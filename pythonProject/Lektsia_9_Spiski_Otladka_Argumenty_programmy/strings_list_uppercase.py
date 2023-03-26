@@ -6,3 +6,4 @@ def convert_list_to_uppercase(strings_list):
 entered_strings_list = input("Введите несколько строк через пробел для создания списка: ").split()
 
 convert_list_to_uppercase(entered_strings_list)
+print(entered_strings_list)
