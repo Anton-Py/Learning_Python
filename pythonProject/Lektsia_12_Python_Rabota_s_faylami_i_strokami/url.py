@@ -1,12 +1,12 @@
-def get_server_name(string, server_name):
-    index_start = string.find(server_name)
-    index_end = index_start + len(server_name)
-    url = string[index_start:index_end]
+def get_server_name(url_address):
+    server_name = 'SomeServerName'
 
-    return url
+    start_index = url_address.find(server_name)
+    end_index = start_index + len(server_name)
+
+    return url_address[start_index:end_index]
 
 
-user_string = 'https://SomeServerName/abcd/dfdf.htm?dfdf=dfdf'
-user_server_name = 'SomeServerName'
+user_url_address = 'https://SomeServerName/abcd/dfdf.htm?dfdf=dfdf'
 
-print(get_server_name(user_string, user_server_name))
+print(get_server_name(user_url_address))

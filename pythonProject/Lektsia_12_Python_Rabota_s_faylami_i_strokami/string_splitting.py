@@ -1,13 +1,16 @@
-def get_numbers_sum_in_string(list_to_splitting):
-    numbers_list = list_to_splitting.split(",")
+def get_numbers_sum_in_string(string):
+    string_list = string.split(", ")
     numbers_sum = 0
+    numbers_list = []
 
-    for i in numbers_list:
-        numbers_sum += int(i)
+    for i in string_list:
+        number = int(i)
+        numbers_sum += number
+        numbers_list.append(number)
 
-    return numbers_sum
+    print("Список из чисел строки:", numbers_list, "\n" "Cумма чисел строки:", numbers_sum)
 
 
-user_list_to_splitting = "5,9,3,4,1,6,2,8,10,3,16"
+user_string = "5, 9, 3, 4, 1, 6, 2, 8, 10, 3, 16"
 
-print(get_numbers_sum_in_string(user_list_to_splitting))
+get_numbers_sum_in_string(user_string)
