@@ -1,10 +1,9 @@
 def is_palindrome(string):
     j = -1
     i = 0
-    string_length = len(string) - 1
     string = string.lower()
 
-    while i < string_length:
+    while i < len(string) // 2:
         if not string[i].isalpha():
             i += 1
             continue
@@ -18,7 +17,6 @@ def is_palindrome(string):
 
         j -= 1
         i += 1
-        string_length -= 1
 
     return True
 
