@@ -1,11 +1,12 @@
 def insertion_sort(items):
-    for i in range(len(items)):
+    for i in range(1, len(items)):
         temp = items[i]
         j = i - 1
 
         while j >= 0 and temp < items[j]:
             items[j + 1] = items[j]
             j -= 1
+
         items[j + 1] = temp
 
 
