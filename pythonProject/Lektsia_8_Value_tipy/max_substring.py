@@ -3,20 +3,20 @@ def get_max_substring_length(string):
         return 0
 
     string = string.lower()
-    max_length_for_substring = 1
-    current_length_for_substring = 1
+    substring_of_max_length = 1
+    substring_of_current_length = 1
 
     for i in range(0, len(string) - 1):
         if string[i] == string[i + 1]:
-            current_length_for_substring += 1
+            substring_of_current_length += 1
 
-            if current_length_for_substring > max_length_for_substring:
-                max_length_for_substring = current_length_for_substring
+            if substring_of_current_length > substring_of_max_length:
+                substring_of_max_length = substring_of_current_length
 
         else:
-            current_length_for_substring = 1
+            substring_of_current_length = 1
 
-    return max_length_for_substring
+    return substring_of_max_length
 
 
 user_string = input("Введите строку: ")
