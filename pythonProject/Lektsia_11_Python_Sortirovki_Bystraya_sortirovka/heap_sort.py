@@ -15,8 +15,7 @@ def buildMaxHeap(arr, n):
             # parent is smaller
             while arr[j] > arr[int((j - 1) / 2)]:
                 (arr[j],
-                 arr[int((j - 1) / 2)]) = (arr[int((j - 1) / 2)],
-                                           arr[j])
+                 arr[int((j - 1) / 2)]) = (arr[int((j - 1) / 2)], arr[j])
                 j = int((j - 1) / 2)
 
 
