@@ -4,7 +4,7 @@
 # function build Max Heap where value
 # of each child is always smaller
 # than value of their parent
-def buildMaxHeap(arr, n):
+def sieve(arr, n):
     for i in range(n):
 
         # if child is bigger than parent
@@ -14,13 +14,12 @@ def buildMaxHeap(arr, n):
             # swap child and parent until
             # parent is smaller
             while arr[j] > arr[int((j - 1) / 2)]:
-                (arr[j],
-                 arr[int((j - 1) / 2)]) = (arr[int((j - 1) / 2)], arr[j])
+                (arr[j], arr[int((j - 1) / 2)]) = (arr[int((j - 1) / 2)], arr[j])
                 j = int((j - 1) / 2)
 
 
-def heapSort(arr, n):
-    buildMaxHeap(arr, n)
+def heap_sort(arr, n):
+    sieve(arr, n)
 
     for i in range(n - 1, 0, -1):
 
@@ -56,7 +55,7 @@ def heapSort(arr, n):
 arr = [10, 20, 15, 17, 9, 21]
 n = len(arr)
 
-heapSort(arr, n)
+heap_sort(arr, n)
 
 print("Sorted array: ")
 for i in range(n):
