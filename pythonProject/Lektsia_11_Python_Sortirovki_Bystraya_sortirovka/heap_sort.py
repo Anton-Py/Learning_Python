@@ -1,62 +1,40 @@
-# Python3 program for implementation
-# of Iterative Heap Sort
+def sieve(list_to_sort, length_list):
+    for i in range(length_list):
 
-# function build Max Heap where value
-# of each child is always smaller
-# than value of their parent
-def sieve(arr, n):
-    for i in range(n):
-
-        # if child is bigger than parent
-        if arr[i] > arr[int((i - 1) / 2)]:
+        if list_to_sort[i] > list_to_sort[int((i - 1) / 2)]:
             j = i
 
-            # swap child and parent until
-            # parent is smaller
-            while arr[j] > arr[int((j - 1) / 2)]:
-                (arr[j], arr[int((j - 1) / 2)]) = (arr[int((j - 1) / 2)], arr[j])
+            while list_to_sort[j] > list_to_sort[int((j - 1) / 2)]:
+                (list_to_sort[j], list_to_sort[int((j - 1) / 2)]) = (list_to_sort[int((j - 1) / 2)], list_to_sort[j])
                 j = int((j - 1) / 2)
 
 
-def heap_sort(arr, n):
-    sieve(arr, n)
+def heap_sort(list_to_sort, length_list):
+    sieve(list_to_sort, length_list)
 
-    for i in range(n - 1, 0, -1):
+    for i in range(length_list - 1, 0, -1):
 
-        # swap value of first indexed
-        # with last indexed
-        arr[0], arr[i] = arr[i], arr[0]
+        list_to_sort[0], list_to_sort[i] = list_to_sort[i], list_to_sort[0]
 
-        # maintaining heap property
-        # after each swapping
-        j, index = 0, 0
+        j = 0
 
         while True:
             index = 2 * j + 1
 
-            # if left child is smaller than
-            # right child point index variable
-            # to right child
-            if (index < (i - 1) and
-                    arr[index] < arr[index + 1]):
+            if index < (i - 1) and list_to_sort[index] < list_to_sort[index + 1]:
                 index += 1
 
-            # if parent is smaller than child
-            # then swapping parent with child
-            # having higher value
-            if index < i and arr[j] < arr[index]:
-                arr[j], arr[index] = arr[index], arr[j]
+            if index < i and list_to_sort[j] < list_to_sort[index]:
+                list_to_sort[j], list_to_sort[index] = list_to_sort[index], list_to_sort[j]
 
             j = index
+
             if index >= i:
                 break
 
 
-arr = [10, 20, 15, 17, 9, 21]
-n = len(arr)
+user_list_to_sort = [10, 20, 15, 17, 9, 21]
+length_the_list = len(user_list_to_sort)
 
-heap_sort(arr, n)
-
-print("Sorted array: ")
-for i in range(n):
-    print(arr[i], end=" ")
+heap_sort(user_list_to_sort, length_the_list)
+print(user_list_to_sort)
