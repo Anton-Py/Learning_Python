@@ -1,0 +1,8 @@
+debug.log
+Pipfile
+**/__pycache__
+*.pyc
+.vscode
+.idea/
+venv/
+*.json
