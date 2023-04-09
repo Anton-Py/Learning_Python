@@ -3,8 +3,8 @@ def get_numbers_list_and_numbers_sum_in_string(string):
     numbers_sum = 0
     numbers_list = []
 
-    for number in strings_list:
-        number = int(number)
+    for string in strings_list:
+        number = int(string)
         numbers_sum += number
         numbers_list.append(number)
 
