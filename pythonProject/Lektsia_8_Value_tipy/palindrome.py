@@ -1,15 +1,18 @@
 def is_palindrome(string):
+    if not string:
+        return True
+
     i = 0
     j = len(string) - 1
-    count = 0
+    symbol_isalpha = False
     string = string.lower()
 
     while i <= j:
-
         if not string[i].isalpha():
             i += 1
-            count += 1
             continue
+        else:
+            symbol_isalpha = True
 
         if not string[j].isalpha():
             j -= 1
@@ -21,7 +24,7 @@ def is_palindrome(string):
         j -= 1
         i += 1
 
-    if count == i:
+    if not symbol_isalpha:
         return False
 
     return True
