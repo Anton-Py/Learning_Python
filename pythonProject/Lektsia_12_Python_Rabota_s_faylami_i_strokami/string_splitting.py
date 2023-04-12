@@ -1,5 +1,5 @@
-def get_numbers_list_and_numbers_sum_in_string(user_string):
-    strings_list = user_string.split(", ")
+def get_numbers_list_and_numbers_sum_in_string(string_data):
+    strings_list = string_data.split(", ")
     numbers_sum = 0
     numbers_list = []
 
