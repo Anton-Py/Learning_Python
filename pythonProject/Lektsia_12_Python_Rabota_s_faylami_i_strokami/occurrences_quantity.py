@@ -1,16 +1,16 @@
-def get_occurrences_quantity(text, search_string):
+def get_occurrences_quantity(text, string_search):
     text = text.lower()
-    search_string = search_string.lower()
+    string_search = string_search.lower()
     start_index = 0
     quantity = 0
 
-    index = text.find(search_string, start_index)
+    index = text.find(string_search, start_index)
 
     while index != -1:
         start_index = index + 1
         quantity += 1
 
-        index = text.find(search_string, start_index)
+        index = text.find(string_search, start_index)
 
     return quantity
 
@@ -19,17 +19,14 @@ def get_total_occurrences_quantity(input_file_path, string_to_search):
     quantity = 0
 
     with open(input_file_path, "r", encoding="utf-8") as input_file:
-        while True:
-            line = input_file.readline()
+        for line in input_file:
             quantity += get_occurrences_quantity(line, string_to_search)
-
-            if not line:
-                break
 
     return quantity
 
 
 user_input_file_path = "data/input_data.txt"
-user_search_string = "файл"
+user_string_to_search = "with"
 
-print("Число вхождений:", get_total_occurrences_quantity(user_input_file_path, user_search_string))
+print("Число вхождений:", get_total_occurrences_quantity(user_input_file_path, user_string_to_search))
+

@@ -1,10 +1,10 @@
-def get_numbers_list_and_numbers_sum_in_string(string_data):
-    strings_list = string_data.split(", ")
+def get_numbers_list_and_numbers_sum_in_string(string):
+    strings_list = string.split(", ")
     numbers_sum = 0
     numbers_list = []
 
-    for string in strings_list:
-        number = int(string)
+    for number_string in strings_list:
+        number = int(number_string)
         numbers_sum += number
         numbers_list.append(number)
 
