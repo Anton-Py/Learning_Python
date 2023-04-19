@@ -1,6 +1,6 @@
-def get_occurrences_quantity(text, string):
+def get_occurrences_quantity(text, search_string):
     text = text.lower()
-    string = string.lower()
+    string = search_string.lower()
     start_index = 0
     quantity = 0
 
@@ -29,4 +29,3 @@ user_input_file_path = "data/input_data.txt"
 user_search_string = "можно"
 
 print("Число вхождений:", get_total_occurrences_quantity(user_input_file_path, user_search_string))
-
