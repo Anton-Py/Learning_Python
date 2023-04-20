@@ -1,6 +1,8 @@
 from PIL import Image, ImageFilter
 
 
+# 1
+
 # image = Image.open("../image.jpg")
 # with image as img:
 #     img.load()
@@ -8,6 +10,9 @@ from PIL import Image, ImageFilter
 #     # blur_img.show()
 #
 # blur_img.save("out.png")
+
+# 2
+# https://habr.com/ru/articles/142818/
 def out_of_range_processing(color):
     if color < 0:
         return 0
@@ -19,18 +24,15 @@ def out_of_range_processing(color):
 
 
 def get_smoothing_image(image, filter_kernel):
+    width, height = image.size
     source_image_pixels = image.load()
     final_image = image.copy()
     final_image_pixels = final_image.load()
-    width, height = image.size
     # print("ширина", image.width)
     # print("высота", image.height)
-    # ширина 1024
-    # высота 768
     indent = (len(filter_kernel) - 1) // 2
-    # print(indent)
 
-    # Проходим по всем пикселям картинки
+    # Проходим попикселям картинки
     for x in range(indent, width - indent):
         for y in range(indent, height - indent):
             # print("x_1", x, "y_1", y)
