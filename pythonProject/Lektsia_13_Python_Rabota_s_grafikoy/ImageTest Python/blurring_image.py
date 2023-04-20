@@ -6,7 +6,12 @@ def get_blurring_image(image, filter_matrix):
     input_image_pixels = image.load()
     output_image_pixels = output_image.load()
     width, height = image.size
+    print(image.width)
+    print(image.height)
+    print(len(filter_matrix))
+    print(len(filter_matrix))
     shift = (len(filter_matrix) - 1) // 2
+    print(shift)
 
     for image_x in range(shift, width - shift):
         for image_y in range(shift, height - shift):
@@ -42,9 +47,8 @@ def saturation(color):
 
 
 input_image = Image.open("../image.jpg")
-matrix = [[1/9, 1/9, 1/9],
-          [1/9, 1/9, 1/9],
-          [1/9, 1/9, 1/9]]
+matrix = [[1/9, 1/9, 1/9], [1/9, 1/9, 1/9], [1/9, 1/9, 1/9]]
 
 result_image = get_blurring_image(input_image, matrix)
 result_image.save("out.png")
+

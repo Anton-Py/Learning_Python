@@ -1,16 +1,16 @@
 def get_occurrences_quantity(text, search_string):
     text = text.lower()
-    string = search_string.lower()
+    search_string = search_string.lower()
     start_index = 0
     quantity = 0
 
-    index = text.find(string, start_index)
+    index = text.find(search_string, start_index)
 
     while index != -1:
-        start_index = index + len(string)
+        start_index = index + len(search_string)
         quantity += 1
 
-        index = text.find(string, start_index)
+        index = text.find(search_string, start_index)
 
     return quantity
 
